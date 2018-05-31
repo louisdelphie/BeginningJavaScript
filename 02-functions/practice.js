@@ -41,8 +41,8 @@ var cardString = function (rank,suit) {
 //     openTag("div");
 //     //=> <div>
 var openTag = function (tag) {
-    var makeOpenTag = "<" + tag + ">";
-    return makeOpenTag;
+    var open = "<" + tag + ">";
+    return open;
 };
 
 
@@ -55,8 +55,8 @@ var openTag = function (tag) {
 //     closeTag("div");
 //     //=> </div>
 var closeTag = function (tag) {
-    var makeCloseTag = "</" + tag + ">" ;
-    return makeCloseTag;
+    var close = "</" + tag + ">" ;
+    return close;
 };
 
 
@@ -74,10 +74,10 @@ var closeTag = function (tag) {
 // Although I won't be testing for this, your code should re-use the functions that
 // you created in the previous section.
 var toTagString = function (tag,content) {
-    var setOpenTag = openTag(tag);
-    var setCloseTag = closeTag(tag);
+    var getOpenTag = openTag(tag);
+    var getCloseTag = closeTag(tag);
     
-    var htmlElement = setOpenTag + content + setCloseTag;
+    var htmlElement = getOpenTag + content + getCloseTag;
     
     return htmlElement;
 };
