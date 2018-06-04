@@ -18,7 +18,7 @@ var results;
 // results = Math.floor(Math.random() * 5);
 // results = Math.floor(Math.random() * 100);
  
- console.log(results);
+// console.log(results);
  
  /*     Arithmetic Operators
  
@@ -51,7 +51,7 @@ var results;
  
  var fahrenheit = ((celsius * 9) / 5) + 32;
  
- console.log(fahrenheit);
+ //console.log(fahrenheit);
  
  var burritoPrice = 5.99;
  
@@ -62,4 +62,47 @@ var results;
 // var totalBurritoPrice = Math.round((burritoPrice * taxRate) + burritoPrice) * 100) / 100;
  var totalBurritoPrice = Math.round((burritoPrice * taxRate) + burritoPrice);
  
- console.log(totalBurritoPrice);
+ //console.log(totalBurritoPrice);
+ 
+ 
+ var greeting = "Hello!";
+ 
+ greeting.toUpperCase();
+ 
+ greeting.toLowerCase();
+ 
+ var tweet = "hello this is a tweet lol";
+ 
+ console.log(tweet);
+ 
+ tweet.indexOf("tweet");
+ 
+ tweet.slice(16);
+ 
+ tweet.slice((16,21));
+ 
+ tweet.length;
+ 
+ tweet.charAt(0); //character at the index 0.
+ 
+ tweet.charAt(tweet.length - 1)
+ 
+   /*     String Methods
+ 
+ 
+    operator               |       Operation
+    str.toLowerCase()      |   return str with all lower-case letters
+    str.toUpperCase()      |   return str with all upper-case letters
+    str.indexOf(a)         |   first starting index of substring a or -1 if a is not found
+    str.slice(a,b)         |   get a substring starting at index a ending at b-1
+    str.charAt(index)      |   return the character at index
+    str.length             |   return length of the string (a property, not a method)
+ 
+ */
+ 
+ var text = "this is a string for testing";
+ 
+ var last3 = text.slice(text.length-3).toUpperCase();
+ 
+ console.log(last3);
+ 

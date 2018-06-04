@@ -27,7 +27,7 @@ var queen = toCardString("queen","hearts");
 //console.log(twoOfDiamonds);
 //console.log(queen);
 
-//console.log(toCardString("ace","spades"));
+console.log(toCardString("ace","spades"));
 
 // makeHtmlParagraph("hello world");
 // => <p>hello world</p>
@@ -40,4 +40,4 @@ var makeHtmlParagraph = function (content){
     return htmlParagraph;
 }
 
-console.log(makeHtmlParagraph("This is a Paragraph"));
+//console.log(makeHtmlParagraph("This is a Paragraph"));
