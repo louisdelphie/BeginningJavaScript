@@ -1,7 +1,7 @@
 // Write a function called isDivisibleBy3 which returns `true` if a number is
 // divisible by 3, and `false` otherwise.
 var isDivisibleBy3 = function (number) {
-    return number % 3 === 0
+    return number % 3 === 0;
 };
 
 
@@ -11,10 +11,12 @@ var isDivisibleBy3 = function (number) {
 // convert the other way, you subtract 32, and then multiply by
 // 5. Finally, you divide by 9. The division operator in JavaScript is
 // `/`.
-var celsToFahr = function () {
+var celsToFahr = function (temperature) {
+     return ((temperature * 9) / 5) + 32;
 };
 
-var fahrToCels = function () {
+var fahrToCels = function (temperature) {
+    return ((temperature - 32) * 5) / 9;
 };
 
 
@@ -32,13 +34,15 @@ var fahrToCels = function () {
 //
 //     randUpTo(1000);
 //     //=> 236
-var randUpTo = function () {
+var randUpTo = function (number) {
+    return Math.floor(Math.random() * number);
 };
 
 
 // Write a function called `randBetween` that accepts two numbers representing a
 // range and returns a random whole number between those two numbers.
-var randBetween = function () {
+var randBetween = function (numberOne, numberTwo) {
+    return Math.floor((Math.random() * (numberTwo - numberOne)) + numberOne);
 };
 
 
@@ -57,7 +61,9 @@ var randBetween = function () {
 //
 //     isSuit("coins");
 //     //=> false
-var isSuit = function () {
+var isSuit = function (suit) {
+    var result =  suit.toLowerCase() === "hearts" || suit.toLowerCase() === "clubs" || suit.toLowerCase() === "diamonds" || suit.toLowerCase() === "spades";
+    return result;
 };
 
 
@@ -73,14 +79,21 @@ var isSuit = function () {
 //
 //     isRank("one");
 //     //=> false
-var isRank = function () {
+var isRank = function (rank) {
+    var result = rank.toLowerCase() === "two" || rank.toLowerCase() === "three" || rank.toLowerCase() === "four" || rank.toLowerCase() === "five" || rank.toLowerCase() === "six" ||
+        rank.toLowerCase() === "seven" || rank.toLowerCase() === "eight" || rank.toLowerCase() === "nine" || rank.toLowerCase() === "ten" || rank.toLowerCase() === "jack" || 
+        rank.toLowerCase() === "queen" || rank.toLowerCase() === "king" || rank.toLowerCase() === "ace"
+        
+        return result;
 };
 
 
 // Using the previous two functions, write a function called isCard that accepts
 // two arguments, a rank and a suit, and returns true if they are valid for a card,
 // and false otherwise.
-var isCard = function () {
+var isCard = function (rank, suit) {
+    var result = isRank(rank) && isSuit(suit);
+    return result;
 };
 
 
@@ -89,7 +102,9 @@ var isCard = function () {
 // Remember that you can use strings in comparisons in the same way that you can
 // use numbers, and the ordering is alphabetical (with capital letters having lower
 // values than their lower-case counterparts).
-var isCapitalized = function () {
+var isCapitalized = function (string) {
+    var result = string.charAt(0).toLowerCase() > string.charAt(0);
+    return result;
 };
 
 
@@ -102,7 +117,8 @@ var isCapitalized = function () {
 //
 //     getHTMLText("<li>this is a list item</li>");
 //     //=> this is a list item
-var getHTMLText = function () {
+var getHTMLText = function (htmlString) {
+    return htmlString.substring(htmlString.indexOf(">") + 1,htmlString.indexOf("</"))
 };
 
 
@@ -123,5 +139,26 @@ var getHTMLText = function () {
 //
 // It may help in this case to look up the `lastIndexOf` method on the string
 // objects.
-var isHTMLElement = function () {
+var isHTMLElement = function (htmlElement) {
+    var indexOfOpenOpen = htmlElement.indexOf("<");
+    var indexOfOpenClose = htmlElement.indexOf(">");
+    var indexOfCloseOpen = htmlElement.indexOf("</");
+    var indexOfCloseClose = htmlElement.lastIndexOf(">");
+    
+    var openString = htmlElement.substring(indexOfOpenOpen + 1,indexOfOpenClose);
+    var closeString = htmlElement.substring(indexOfCloseOpen + 2, indexOfCloseClose);
+    
+   var result = indexOfOpenOpen === 0 && indexOfOpenClose > -1 && indexOfCloseOpen > -1 && indexOfCloseClose === htmlElement.length - 1 && openString === closeString;
+   
+  
+    // console.log(indexOfOpenOpen);
+    // console.log(indexOfOpenClose);
+    // console.log(indexOfCloseOpen);
+    // console.log(indexOfCloseClose);
+    // console.log(openString);
+    // console.log(closeString);
+   
+   return result;
 };
+
+//console.log(isHTMLElement("this <div>is not valid</div>"));
